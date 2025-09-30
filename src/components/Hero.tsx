@@ -1,63 +1,62 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { heroContent } from "@/constants/content";
 
 const Hero = () => {
-  const scrollToPricing = () => {
-    const pricingSection = document.getElementById("pricing");
-    pricingSection?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
-      <div className="max-w-6xl mx-auto text-center">
+    <section className="min-h-screen flex items-center justify-center px-4 py-32">
+      <div className="max-w-5xl mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-sm tracking-[0.2em] text-[hsl(var(--accent))] font-mono mb-6"
+        >
+          {heroContent.preHeadline}
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 sm:mb-8 leading-tight"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-5xl leading-[1.2] font-bold mb-8 text-white"
+          style={{ letterSpacing: '0.02em' }}
         >
-          Don't sell marketing.
-          <br />
-          <span className="gradient-text animate-gradient inline-block">
-            Sell the revenue that makes tomorrow possible.
-          </span>
+          {heroContent.headline}
         </motion.h1>
         
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-base sm:text-lg md:text-xl text-muted-foreground mb-4 sm:mb-6 max-w-3xl mx-auto px-4"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-xl text-white/80 mb-6 max-w-3xl mx-auto leading-relaxed"
         >
-          Agencies nickel-and-dime you with proposals, meetings, and hourly rates.
-          You get stuck in revision hell with no clear path to ROI.
+          {heroContent.subheadline}
         </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg sm:text-xl md:text-2xl font-bold mb-8 sm:mb-12 max-w-3xl mx-auto px-4"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-xl font-semibold text-white mb-12 max-w-3xl mx-auto leading-relaxed"
         >
-          We're different. One flat fee. Unlimited requests. Predictable growth.
-          No meetings unless you want them.
+          {heroContent.value}
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex justify-center px-4"
+          transition={{ duration: 0.6, delay: 0.4 }}
         >
           <Button
             size="lg"
             onClick={() => {
               console.log("CTA: Book a Call (Hero)");
-              window.open("https://calendly.com/genz-investorr/30min", "_blank");
+              window.open(heroContent.ctaUrl, "_blank");
             }}
-            className="w-full sm:w-auto gradient-gold-orange text-black font-bold text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 shadow-glow hover:scale-105 transition-all duration-300 animate-gradient"
+            className="bg-[hsl(var(--coral))] hover:bg-[hsl(var(--coral))]/90 text-white font-bold text-xl px-8 py-6 rounded-lg transition-all duration-300 hover:scale-105"
           >
-            Book a Call
+            {heroContent.cta}
           </Button>
         </motion.div>
       </div>

@@ -2,54 +2,60 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { finalCTA } from "@/constants/content";
 
 const FinalCTA = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const scrollToPricing = () => {
-    const pricingSection = document.getElementById("pricing");
-    pricingSection?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <section ref={ref} className="py-20 sm:py-32 px-4 bg-gradient-to-r from-background via-[hsl(var(--gold))]/5 to-background">
+    <section ref={ref} className="py-32 px-4">
       <div className="max-w-5xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 px-4"
+          className="text-5xl font-bold mb-6 text-white"
+          style={{ letterSpacing: '0.02em' }}
         >
-          Stop wasting money on marketing that doesn't work.
+          {finalCTA.headline}
         </motion.h2>
         
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-12 px-4"
+          className="text-xl text-white/80 mb-12 leading-relaxed"
         >
-          Join businesses getting predictable growth for one flat fee.
+          {finalCTA.subheadline}
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex justify-center px-4"
+          className="mb-6"
         >
           <Button
             size="lg"
-            className="w-full sm:w-auto gradient-gold-orange text-black font-bold text-lg sm:text-xl px-8 sm:px-12 py-6 sm:py-8 shadow-glow hover:scale-105 transition-all duration-300 animate-gradient"
+            className="bg-[hsl(var(--coral))] hover:bg-[hsl(var(--coral))]/90 text-white font-bold text-xl px-12 py-8 rounded-lg transition-all duration-300 hover:scale-105"
             onClick={() => {
-              console.log("CTA: Book a Call (Final CTA)");
-              window.open("https://calendly.com/genz-investorr/30min", "_blank");
+              console.log("CTA: Book Your Call (Final)");
+              window.open(finalCTA.ctaUrl, "_blank");
             }}
           >
-            Book a Call
+            {finalCTA.cta}
           </Button>
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="text-sm text-[hsl(var(--accent))]"
+        >
+          {finalCTA.socialProof}
+        </motion.p>
       </div>
     </section>
   );

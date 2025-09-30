@@ -1,21 +1,23 @@
 import Hero from "@/components/Hero";
-import CoreServices from "@/components/CoreServices";
-import AdvancedServices from "@/components/AdvancedServices";
-import Pricing from "@/components/Pricing";
-import HowItWorks from "@/components/HowItWorks";
-import FAQ from "@/components/FAQ";
+import SocialProofStrip from "@/components/SocialProofStrip";
+import ServicesGrid from "@/components/ServicesGrid";
+import ProcessTimeline from "@/components/ProcessTimeline";
+import CaseStudies from "@/components/CaseStudies";
+import PricingTiers from "@/components/PricingTiers";
+import FAQSection from "@/components/FAQSection";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#0A0A0B]">
       <Hero />
-      <CoreServices />
-      <AdvancedServices />
-      <Pricing />
-      <HowItWorks />
-      <FAQ />
+      <SocialProofStrip />
+      <ServicesGrid />
+      <ProcessTimeline />
+      <CaseStudies />
+      <PricingTiers />
+      <FAQSection />
       <FinalCTA />
       <Footer />
     </div>

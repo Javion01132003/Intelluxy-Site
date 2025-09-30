@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Palette: Background #0A0A0B, Text #FFFFFF, Coral #FF5A5F, Gold #F4C430 */
+    /* 4-Color Palette: Black #0A0A0B, White #FFFFFF, Coral #FF5A5F, Gold #F4C430 */
     --background: 240 6% 4%;
     --foreground: 0 0% 100%;
 
@@ -18,9 +18,10 @@ All colors MUST be HSL.
     --popover: 240 10% 6%;
     --popover-foreground: 0 0% 100%;
 
-    /* Primary = CTA Coral */
+    /* Coral = CTA buttons */
+    --coral: 358 100% 67%;
     --primary: 358 100% 67%;
-    --primary-foreground: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
 
     /* Secondary kept but unused; rely on gold for accents */
     --secondary: 45 90% 57%;
@@ -41,10 +42,10 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* Exact accents */
-    --gold: 45 90% 57%; /* #F4C430 */
-    --orange: 45 90% 57%; /* avoid orange, map to gold to respect 4-color rule */
-    --coral: 358 100% 67%; /* #FF5A5F */
+    /* Gold = borders, highlights, accents */
+    --accent: 45 90% 57%; /* #F4C430 */
+    --gold: 45 90% 57%;
+    --orange: 45 90% 57%;
     
     /* Replace prior gold→orange gradient with solid coral for CTAs */
     --gradient-gold-orange: hsl(var(--coral));
@@ -78,10 +79,7 @@ All colors MUST be HSL.
 
 @layer utilities {
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold)));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: hsl(var(--accent));
   }
 
   .gradient-gold-orange {
@@ -109,7 +107,19 @@ All colors MUST be HSL.
     background-size: 100% 100%;
   }
 
-  /* No animated gradients per strict palette; keep class harmless */
+  /* Revenue ticker animation */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
 
   .hover-gradient-border {
     position: relative;
