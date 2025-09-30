@@ -12,7 +12,7 @@ export const socialProof = {
   stats: [
     {
       number: "$9,597",
-      label: "Collected in Week 23 - #1 Team Performance"
+      label: "Collected in Week 23 - #1 Closer for Smitty The Goat"
     },
     {
       number: "16",
@@ -127,25 +127,25 @@ export const caseStudies = {
   
   studies: [
     {
-      client: "Team Maurice - #1 Team Performance",
-      challenge: "New closer needed to scale revenue and build team",
-      solution: "High-performance sales systems, team leadership, and closing framework",
+      client: "Smitty The Goat - Credit/Business Funding Coach",
+      challenge: "High-ticket coaching program needed proven closer to scale revenue",
+      solution: "Advanced closing techniques and team leadership for credit/business funding coaching",
       results: [
         { metric: "$9,597", label: "Total cash collected in Week 23" },
         { metric: "16", label: "Deals closed in one week" },
         { metric: "#1", label: "Team ranking for the week" },
-        { metric: "$297K+", label: "Total team revenue collected" }
+        { metric: "$297K+", label: "Total team revenue generated" }
       ],
       testimonial: {
-        quote: "Intelluxy's system helped us dominate the leaderboard. We went from struggling to #1 team in just weeks.",
-        author: "Maurice",
-        title: "Team Leader"
+        quote: "Maurice dominated our leaderboard and became our #1 closer. The results speak for themselves.",
+        author: "Smitty The Goat",
+        title: "Credit/Business Funding Coach"
       }
     },
     {
-      client: "Individual Closer - 10 Closes Week",
-      challenge: "Low close rates and inconsistent income",
-      solution: "Personalized coaching with proven closing techniques",
+      client: "Individual Performance - 10 Closes Week",
+      challenge: "Proving closing ability in high-ticket coaching environment",
+      solution: "Mastered phone and webinar closing techniques for credit/business funding",
       results: [
         { metric: "10", label: "Closes in one week" },
         { metric: "$5,000", label: "Paid-in-full deal" },
@@ -153,15 +153,15 @@ export const caseStudies = {
         { metric: "3", label: "Webinar closes" }
       ],
       testimonial: {
-        quote: "I hit 10 closes this week thanks to the system. My 10th close was a 5k paid in full too!",
+        quote: "I hit 10 closes this week. My 10th close was a 5k paid in full. The system works.",
         author: "Maurice",
-        title: "Sales Professional"
+        title: "Top Closer"
       }
     },
     {
-      client: "Sales Team - Daily Performance",
-      challenge: "Daily targets not being met consistently",
-      solution: "Team-based approach with individual accountability",
+      client: "Team Performance - Daily Records",
+      challenge: "Building consistent daily revenue for coaching program",
+      solution: "Team-based approach with individual accountability and proven systems",
       results: [
         { metric: "$18,000", label: "Collected in one day" },
         { metric: "$6,000", label: "Additional team revenue" },
@@ -169,7 +169,7 @@ export const caseStudies = {
         { metric: "$6,050", label: "Personal collection record" }
       ],
       testimonial: {
-        quote: "The team brought in another 6k today so we're at 18k for the day. This system works.",
+        quote: "The team brought in another 6k today so we're at 18k for the day. Maurice's leadership made the difference.",
         author: "Team Member",
         title: "Sales Team"
       }
