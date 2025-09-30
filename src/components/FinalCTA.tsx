@@ -35,16 +35,29 @@ const FinalCTA = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mb-6"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
           <Button
             size="lg"
-            className="bg-[hsl(var(--coral))] hover:bg-[hsl(var(--coral))]/90 text-white font-bold text-xl px-12 py-8 rounded-lg transition-all duration-300 hover:scale-105"
+            className="bg-[hsl(var(--coral))] hover:bg-[hsl(var(--coral))]/90 text-white font-bold text-xl px-12 py-8 rounded-lg transition-all duration-300 relative overflow-hidden"
             onClick={() => {
               console.log("CTA: Book Your Call (Final)");
               window.open(finalCTA.ctaUrl, "_blank");
             }}
           >
-            {finalCTA.cta}
+            <motion.span
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+              animate={{
+                x: ["-100%", "200%"]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatDelay: 1
+              }}
+            />
+            <span className="relative z-10">{finalCTA.cta}</span>
           </Button>
         </motion.div>
 

@@ -40,9 +40,19 @@ const PricingTiers = () => {
               }`}
             >
               {tier.highlighted && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[hsl(var(--accent))] text-black px-6 py-1 rounded-full text-sm font-bold">
+                <motion.div 
+                  className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[hsl(var(--accent))] text-black px-6 py-1 rounded-full text-sm font-bold"
+                  animate={{
+                    y: [0, -4, 0],
+                    scale: [1, 1.05, 1]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity
+                  }}
+                >
                   MOST POPULAR
-                </div>
+                </motion.div>
               )}
 
               <div className="mb-8">
@@ -53,9 +63,22 @@ const PricingTiers = () => {
                   {tier.description}
                 </p>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-5xl font-bold text-white">
+                  <motion.span 
+                    className="text-5xl font-bold text-white"
+                    animate={tier.highlighted ? {
+                      textShadow: [
+                        "0 0 8px rgba(244,196,48,0.5)",
+                        "0 0 16px rgba(244,196,48,0.8)",
+                        "0 0 8px rgba(244,196,48,0.5)"
+                      ]
+                    } : {}}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity
+                    }}
+                  >
                     {tier.price}
-                  </span>
+                  </motion.span>
                   <span className="text-base text-white/70">
                     {tier.period}
                   </span>

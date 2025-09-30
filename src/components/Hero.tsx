@@ -19,10 +19,28 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl leading-[1.2] font-bold mb-8 text-white"
+          className="text-5xl leading-[1.2] font-bold mb-8"
           style={{ letterSpacing: '0.02em' }}
         >
-          {heroContent.headline}
+          <motion.span
+            animate={{
+              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            style={{
+              background: "linear-gradient(90deg, #FFFFFF 0%, #F4C430 50%, #FFFFFF 100%)",
+              backgroundSize: "200% auto",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text"
+            }}
+          >
+            {heroContent.headline}
+          </motion.span>
         </motion.h1>
         
         <motion.p
@@ -47,6 +65,8 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
           <Button
             size="lg"
@@ -54,9 +74,20 @@ const Hero = () => {
               console.log("CTA: Book a Call (Hero)");
               window.open(heroContent.ctaUrl, "_blank");
             }}
-            className="bg-[hsl(var(--coral))] hover:bg-[hsl(var(--coral))]/90 text-white font-bold text-xl px-8 py-6 rounded-lg transition-all duration-300 hover:scale-105"
+            className="bg-[hsl(var(--coral))] hover:bg-[hsl(var(--coral))]/90 text-white font-bold text-xl px-8 py-6 rounded-lg transition-all duration-300 relative overflow-hidden group"
           >
-            {heroContent.cta}
+            <motion.span
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+              animate={{
+                x: ["-100%", "200%"]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatDelay: 1
+              }}
+            />
+            <span className="relative z-10">{heroContent.cta}</span>
           </Button>
         </motion.div>
       </div>

@@ -32,9 +32,23 @@ const ServicesGrid = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="border-2 border-[hsl(var(--accent))] rounded-xl p-8 hover:border-[hsl(var(--accent))]/80 transition-all duration-300 hover:transform hover:scale-[1.02]"
+              className="border-2 border-[hsl(var(--accent))] rounded-xl p-8 hover:border-[hsl(var(--accent))]/80 transition-all duration-300 hover:transform hover:scale-[1.02] group"
             >
-              <div className="text-4xl mb-4">{service.icon}</div>
+              <motion.div 
+                className="text-4xl mb-4"
+                animate={{ 
+                  y: [0, -8, 0],
+                  rotate: [0, 5, -5, 0]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: index * 0.2
+                }}
+                whileHover={{ scale: 1.2, rotate: 15 }}
+              >
+                {service.icon}
+              </motion.div>
               <h3 className="text-2xl font-bold text-white mb-3">
                 {service.title}
               </h3>
@@ -64,8 +78,23 @@ const ServicesGrid = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-              className="border-2 border-[hsl(var(--accent))] bg-gradient-to-br from-[hsl(var(--accent))]/10 to-transparent rounded-xl p-10 hover:border-[hsl(var(--accent))]/80 transition-all duration-300"
+              className="border-2 border-[hsl(var(--accent))] bg-gradient-to-br from-[hsl(var(--accent))]/10 to-transparent rounded-xl p-10 hover:border-[hsl(var(--accent))]/80 transition-all duration-300 hover:scale-105"
             >
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+              >
+                <div className="w-16 h-16 rounded-full bg-[hsl(var(--accent))]/20 flex items-center justify-center mb-4">
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    className="text-3xl"
+                  >
+                    ⚙️
+                  </motion.div>
+                </div>
+              </motion.div>
               <h3 className="text-2xl font-bold text-[hsl(var(--accent))] mb-3">
                 {service.title}
               </h3>

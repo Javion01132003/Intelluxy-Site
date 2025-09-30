@@ -33,11 +33,33 @@ const ProcessTimeline = () => {
               className="relative flex items-start gap-8 mb-16 last:mb-0"
             >
               {/* Number circle */}
-              <div className="relative z-10 flex-shrink-0 w-16 h-16 rounded-full border-2 border-[hsl(var(--accent))] bg-[hsl(var(--background))] flex items-center justify-center">
-                <span className="text-3xl font-bold text-[hsl(var(--accent))]">
+              <motion.div 
+                className="relative z-10 flex-shrink-0 w-16 h-16 rounded-full border-2 border-[hsl(var(--accent))] bg-[hsl(var(--background))] flex items-center justify-center"
+                animate={{
+                  boxShadow: [
+                    "0 0 0 0 rgba(244,196,48,0.7)",
+                    "0 0 0 10px rgba(244,196,48,0)",
+                    "0 0 0 0 rgba(244,196,48,0)"
+                  ]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: index * 0.5
+                }}
+              >
+                <motion.span 
+                  className="text-3xl font-bold text-[hsl(var(--accent))]"
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: index * 0.5
+                  }}
+                >
                   {step.number}
-                </span>
-              </div>
+                </motion.span>
+              </motion.div>
 
               {/* Content */}
               <div className="flex-1 pt-2">
