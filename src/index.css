@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Palette: Background #0A0A0B, Text #FFFFFF, Coral #FF5A5F, Gold #F4C430 */
+    --background: 240 6% 4%;
+    --foreground: 0 0% 100%;
+
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Primary = CTA Coral */
+    --primary: 358 100% 67%;
+    --primary-foreground: 0 0% 0%;
+
+    /* Secondary kept but unused; rely on gold for accents */
+    --secondary: 45 90% 57%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 10% 10%;
+    --muted-foreground: 240 5% 64%;
+
+    --accent: 45 90% 57%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 45 90% 57% / 0.3;
+    --input: 240 10% 10%;
+    --ring: 45 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Exact accents */
+    --gold: 45 90% 57%; /* #F4C430 */
+    --orange: 45 90% 57%; /* avoid orange, map to gold to respect 4-color rule */
+    --coral: 358 100% 67%; /* #FF5A5F */
+    
+    /* Replace prior gold→orange gradient with solid coral for CTAs */
+    --gradient-gold-orange: hsl(var(--coral));
+    --gradient-subtle: linear-gradient(180deg, hsl(240 10% 4%), hsl(240 10% 6%));
+    
+    --shadow-gold-glow: 0 10px 40px -10px hsl(45 100% 50% / 0.4);
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.3);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap');
+  
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.1;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-gold-orange {
+    /* CTA now uses solid coral */
+    background: hsl(var(--coral));
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-gold-glow);
+  }
+
+  .hover-scale {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .border-gold-30 {
+    border-color: hsl(var(--gold) / 0.3);
+  }
+
+  .animate-gradient {
+    background-size: 100% 100%;
+  }
+
+  /* No animated gradients per strict palette; keep class harmless */
+
+  .hover-gradient-border {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hover-gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--orange)));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .hover-gradient-border:hover::before {
+    opacity: 1;
+  }
+}
