@@ -11,16 +11,16 @@ export const socialProof = {
   headline: "Results speak louder than promises.",
   stats: [
     {
-      number: "$297K",
-      label: "Team revenue as #1 closer and Team Leader Maurice"
+      number: "$9,597",
+      label: "Collected in Week 23 - #1 Team Performance"
     },
     {
-      number: "$35K",
-      label: "Personal revenue in 2 months"
+      number: "16",
+      label: "Deals closed in one week"
     },
     {
-      number: "$2.47",
-      label: "Cost per lead achieved (vs. $15-25 industry average)"
+      number: "$18K",
+      label: "Single day team record"
     }
   ]
 };
@@ -127,45 +127,64 @@ export const caseStudies = {
   
   studies: [
     {
-      client: "Team Maurice - High-Ticket Closing",
+      client: "Team Maurice - #1 Team Performance",
       challenge: "New closer needed to scale revenue and build team",
       solution: "High-performance sales systems, team leadership, and closing framework",
       results: [
-        { metric: "$297K+", label: "Total team revenue collected" },
-        { metric: "#1", label: "Ranked closer on team" },
-        { metric: "$35K", label: "Personal revenue in 2 months" },
-        { metric: "$6K", label: "Single-day record" }
-      ],
-      testimonial: null
-    },
-    {
-      client: "Toni Gambill - Real Estate, Venice FL",
-      challenge: "Great properties, zero online visibility. No Facebook advertising experience. Relied on referrals only.",
-      solution: "Custom Facebook ad campaign with proven real estate copy and precise audience targeting",
-      results: [
-        { metric: "2,200", label: "People reached" },
-        { metric: "56", label: "Qualified leads" },
-        { metric: "$2.47", label: "Cost per lead" },
-        { metric: "$138", label: "Total ad spend" },
-        { metric: "7 days", label: "Campaign duration" }
+        { metric: "$9,597", label: "Total cash collected in Week 23" },
+        { metric: "16", label: "Deals closed in one week" },
+        { metric: "#1", label: "Team ranking for the week" },
+        { metric: "$297K+", label: "Total team revenue collected" }
       ],
       testimonial: {
-        quote: "Yes! I am impressed! The leads started coming in within days, and they weren't just local—we had interest from Massachusetts and New York.",
-        author: "Toni Gambill",
-        title: "Realtor, Venice FL"
+        quote: "Intelluxy's system helped us dominate the leaderboard. We went from struggling to #1 team in just weeks.",
+        author: "Maurice",
+        title: "Team Leader"
+      }
+    },
+    {
+      client: "Individual Closer - 10 Closes Week",
+      challenge: "Low close rates and inconsistent income",
+      solution: "Personalized coaching with proven closing techniques",
+      results: [
+        { metric: "10", label: "Closes in one week" },
+        { metric: "$5,000", label: "Paid-in-full deal" },
+        { metric: "7", label: "Phone closes" },
+        { metric: "3", label: "Webinar closes" }
+      ],
+      testimonial: {
+        quote: "I hit 10 closes this week thanks to the system. My 10th close was a 5k paid in full too!",
+        author: "Maurice",
+        title: "Sales Professional"
+      }
+    },
+    {
+      client: "Sales Team - Daily Performance",
+      challenge: "Daily targets not being met consistently",
+      solution: "Team-based approach with individual accountability",
+      results: [
+        { metric: "$18,000", label: "Collected in one day" },
+        { metric: "$6,000", label: "Additional team revenue" },
+        { metric: "$5,172", label: "Individual daily record" },
+        { metric: "$6,050", label: "Personal collection record" }
+      ],
+      testimonial: {
+        quote: "The team brought in another 6k today so we're at 18k for the day. This system works.",
+        author: "Team Member",
+        title: "Sales Team"
       }
     }
   ],
   
   revenueTickerHeadline: "Revenue Impact Highlights",
   revenueHighlights: [
-    "$297K collected as Team Leader",
-    "$35K in 60 days personal",
-    "$6K single day record",
-    "56 leads at $2.47 each",
-    "$138 total ad spend",
-    "2,200 people reached in 7 days",
-    "Multi-state lead generation (FL, MA, NY)"
+    "$9,597 collected in Week 23",
+    "16 deals closed in one week",
+    "#1 team ranking achieved",
+    "$18,000 single day record",
+    "$5,000 paid-in-full deal",
+    "10 closes in one week",
+    "$297K+ total team revenue"
   ]
 };
 
