@@ -43,12 +43,14 @@ const PricingTiers = () => {
                 <motion.div 
                   className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[hsl(var(--accent))] text-black px-6 py-1 rounded-full text-sm font-bold"
                   animate={{
-                    y: [0, -4, 0],
-                    scale: [1, 1.05, 1]
+                    y: [0, -8, 0],
+                    scale: [1, 1.1, 1],
+                    rotate: [0, 2, -2, 0]
                   }}
                   transition={{
-                    duration: 2,
-                    repeat: Infinity
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
                   }}
                 >
                   MOST POPULAR
@@ -70,11 +72,17 @@ const PricingTiers = () => {
                         "0 0 8px rgba(244,196,48,0.5)",
                         "0 0 16px rgba(244,196,48,0.8)",
                         "0 0 8px rgba(244,196,48,0.5)"
-                      ]
-                    } : {}}
+                      ],
+                      y: [0, -3, 0],
+                      scale: [1, 1.05, 1]
+                    } : {
+                      y: [0, -2, 0],
+                      scale: [1, 1.02, 1]
+                    }}
                     transition={{
-                      duration: 2,
-                      repeat: Infinity
+                      textShadow: { duration: 2, repeat: Infinity },
+                      y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                      scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
                     }}
                   >
                     {tier.price}

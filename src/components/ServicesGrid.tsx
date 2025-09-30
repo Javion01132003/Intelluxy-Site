@@ -37,15 +37,23 @@ const ServicesGrid = () => {
               <motion.div 
                 className="text-4xl mb-4"
                 animate={{ 
-                  y: [0, -8, 0],
-                  rotate: [0, 5, -5, 0]
+                  y: [0, -15, 0],
+                  x: [0, 8, -8, 0],
+                  rotate: [0, 10, -10, 0],
+                  scale: [1, 1.1, 1]
                 }}
                 transition={{
-                  duration: 3,
+                  duration: 4,
                   repeat: Infinity,
-                  delay: index * 0.2
+                  delay: index * 0.3,
+                  ease: "easeInOut"
                 }}
-                whileHover={{ scale: 1.2, rotate: 15 }}
+                whileHover={{ 
+                  scale: 1.3, 
+                  rotate: 20,
+                  y: -20,
+                  transition: { duration: 0.3 }
+                }}
               >
                 {service.icon}
               </motion.div>
@@ -87,8 +95,16 @@ const ServicesGrid = () => {
               >
                 <div className="w-16 h-16 rounded-full bg-[hsl(var(--accent))]/20 flex items-center justify-center mb-4">
                   <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    animate={{ 
+                      rotate: 360,
+                      scale: [1, 1.2, 1],
+                      y: [0, -10, 0]
+                    }}
+                    transition={{ 
+                      rotate: { duration: 15, repeat: Infinity, ease: "linear" },
+                      scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                      y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                    }}
                     className="text-3xl"
                   >
                     ⚙️

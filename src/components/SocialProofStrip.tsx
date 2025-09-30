@@ -32,11 +32,13 @@ const SocialProofStrip = () => {
               <motion.div 
                 className="text-5xl font-bold text-white mb-4"
                 initial={{ scale: 0 }}
-                animate={isInView ? { scale: 1 } : { scale: 0 }}
+                animate={isInView ? { 
+                  scale: 1,
+                  y: [0, -5, 0]
+                } : { scale: 0 }}
                 transition={{ 
-                  type: "spring",
-                  stiffness: 200,
-                  delay: index * 0.1 + 0.2
+                  scale: { type: "spring", stiffness: 200, delay: index * 0.1 + 0.2 },
+                  y: { duration: 3, repeat: Infinity, delay: index * 0.2 }
                 }}
               >
                 <motion.span
@@ -45,12 +47,12 @@ const SocialProofStrip = () => {
                       "0 0 8px rgba(244,196,48,0.3)",
                       "0 0 16px rgba(244,196,48,0.6)",
                       "0 0 8px rgba(244,196,48,0.3)"
-                    ]
+                    ],
+                    scale: [1, 1.05, 1]
                   }}
                   transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: index * 0.3
+                    textShadow: { duration: 2, repeat: Infinity, delay: index * 0.3 },
+                    scale: { duration: 4, repeat: Infinity, delay: index * 0.2 }
                   }}
                 >
                   {stat.number}

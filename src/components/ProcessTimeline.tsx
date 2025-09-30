@@ -40,21 +40,29 @@ const ProcessTimeline = () => {
                     "0 0 0 0 rgba(244,196,48,0.7)",
                     "0 0 0 10px rgba(244,196,48,0)",
                     "0 0 0 0 rgba(244,196,48,0)"
-                  ]
+                  ],
+                  y: [0, -8, 0],
+                  rotate: [0, 5, -5, 0]
                 }}
                 transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  delay: index * 0.5
+                  boxShadow: { duration: 2, repeat: Infinity, delay: index * 0.5 },
+                  y: { duration: 3, repeat: Infinity, delay: index * 0.3 },
+                  rotate: { duration: 4, repeat: Infinity, delay: index * 0.2 }
                 }}
               >
                 <motion.span 
                   className="text-3xl font-bold text-[hsl(var(--accent))]"
-                  animate={{ scale: [1, 1.1, 1] }}
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    textShadow: [
+                      "0 0 0px rgba(244,196,48,0)",
+                      "0 0 10px rgba(244,196,48,0.5)",
+                      "0 0 0px rgba(244,196,48,0)"
+                    ]
+                  }}
                   transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: index * 0.5
+                    scale: { duration: 2, repeat: Infinity, delay: index * 0.5 },
+                    textShadow: { duration: 3, repeat: Infinity, delay: index * 0.4 }
                   }}
                 >
                   {step.number}

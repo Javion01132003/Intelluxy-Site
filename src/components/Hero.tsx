@@ -24,12 +24,12 @@ const Hero = () => {
         >
           <motion.span
             animate={{
-              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              y: [0, -2, 0]
             }}
             transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "linear"
+              backgroundPosition: { duration: 5, repeat: Infinity, ease: "linear" },
+              y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
             }}
             style={{
               background: "linear-gradient(90deg, #FFFFFF 0%, #F4C430 50%, #FFFFFF 100%)",
