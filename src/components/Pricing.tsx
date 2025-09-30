@@ -179,12 +179,11 @@ const Pricing = () => {
               </ul>
 
               <Button
-                className={`w-full text-base sm:text-lg py-5 sm:py-6 font-bold transition-all duration-300 ${
-                  tier.popular
-                    ? "gradient-gold-orange text-black shadow-glow hover:scale-105 animate-gradient"
-                    : "border-2 border-gold-30 bg-transparent hover:bg-gradient-to-br hover:from-[hsl(var(--gold))]/10 hover:to-[hsl(var(--orange))]/10 hover:border-[hsl(var(--gold))]"
-                }`}
-                onClick={() => console.log(`CTA: Selected ${tier.name} plan (Pricing)`)}
+                className="w-full text-base sm:text-lg py-5 sm:py-6 font-bold transition-all duration-300 gradient-gold-orange text-black shadow-glow hover:scale-105 animate-gradient"
+                onClick={() => {
+                  console.log(`CTA: Selected ${tier.name} plan (Pricing)`);
+                  window.open("https://calendly.com/genz-investorr/30min", "_blank");
+                }}
               >
                 {tier.cta}
               </Button>
@@ -217,9 +216,12 @@ const Pricing = () => {
           <Button
             size="lg"
             className="w-full sm:w-auto gradient-gold-orange text-black font-bold text-lg sm:text-xl px-8 sm:px-12 py-6 sm:py-8 shadow-glow hover:scale-105 transition-all duration-300 animate-gradient"
-            onClick={() => console.log("Get Started clicked")}
+            onClick={() => {
+              console.log("CTA: Get Started (Pricing)");
+              window.open("https://calendly.com/genz-investorr/30min", "_blank");
+            }}
           >
-            Get Started Today
+            Book a Call
           </Button>
         </motion.div>
       </div>

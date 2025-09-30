@@ -47,26 +47,15 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center px-4"
+          className="flex justify-center px-4"
         >
           <Button
             size="lg"
             onClick={() => {
-              console.log("CTA: See Pricing (Hero)");
-              scrollToPricing();
-            }}
-            className="w-full sm:w-auto gradient-gold-orange text-black font-bold text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 shadow-glow hover:scale-105 transition-all duration-300 animate-gradient"
-          >
-            See Pricing
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="w-full sm:w-auto border-2 border-gold-30 bg-transparent text-foreground font-bold text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 hover:bg-[hsl(var(--gold))]/10 hover:border-[hsl(var(--gold))] transition-all duration-300"
-            onClick={() => {
               console.log("CTA: Book a Call (Hero)");
               window.open("https://calendly.com/genz-investorr/30min", "_blank");
             }}
+            className="w-full sm:w-auto gradient-gold-orange text-black font-bold text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 shadow-glow hover:scale-105 transition-all duration-300 animate-gradient"
           >
             Book a Call
           </Button>

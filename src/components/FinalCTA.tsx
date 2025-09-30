@@ -37,28 +37,17 @@ const FinalCTA = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4"
+          className="flex justify-center px-4"
         >
           <Button
             size="lg"
             className="w-full sm:w-auto gradient-gold-orange text-black font-bold text-lg sm:text-xl px-8 sm:px-12 py-6 sm:py-8 shadow-glow hover:scale-105 transition-all duration-300 animate-gradient"
             onClick={() => {
-              console.log("CTA: Get Started Today (Final CTA)");
-              scrollToPricing();
-            }}
-          >
-            Get Started Today
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="w-full sm:w-auto border-2 border-gold-30 bg-transparent text-foreground font-bold text-lg sm:text-xl px-8 sm:px-12 py-6 sm:py-8 hover:bg-gradient-to-br hover:from-[hsl(var(--gold))]/10 hover:to-[hsl(var(--orange))]/10 hover:border-[hsl(var(--gold))] transition-all duration-300"
-            onClick={() => {
-              console.log("CTA: Schedule a Call (Final CTA)");
+              console.log("CTA: Book a Call (Final CTA)");
               window.open("https://calendly.com/genz-investorr/30min", "_blank");
             }}
           >
-            Schedule a Call
+            Book a Call
           </Button>
         </motion.div>
       </div>
