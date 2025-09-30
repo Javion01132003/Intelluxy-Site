@@ -173,6 +173,22 @@ export const caseStudies = {
         author: "Team Member",
         title: "Sales Team"
       }
+    },
+    {
+      client: "Toni Gambill - Real Estate Lead Generation",
+      challenge: "Great properties, zero online visibility. No Facebook advertising experience. Relied on referrals only.",
+      solution: "Custom Facebook ad campaign with proven real estate copy and precise audience targeting",
+      results: [
+        { metric: "56", label: "Qualified leads generated" },
+        { metric: "$2.47", label: "Cost per lead (vs. $15-25 industry average)" },
+        { metric: "2,200", label: "People reached in 7 days" },
+        { metric: "$138", label: "Total ad spend" }
+      ],
+      testimonial: {
+        quote: "Yes! I am impressed! The leads started coming in within days, and they weren't just local—we had interest from Massachusetts and New York.",
+        author: "Toni Gambill",
+        title: "Realtor, Venice FL"
+      }
     }
   ],
   
@@ -184,7 +200,10 @@ export const caseStudies = {
     "$18,000 single day record",
     "$5,000 paid-in-full deal",
     "10 closes in one week",
-    "$297K+ total team revenue"
+    "$297K+ total team revenue",
+    "56 leads at $2.47 each",
+    "$138 total ad spend",
+    "2,200 people reached in 7 days"
   ]
 };
 
